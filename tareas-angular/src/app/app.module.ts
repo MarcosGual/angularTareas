@@ -10,6 +10,8 @@ import { AlertasLibroComponent } from './alertas-libro/alertas-libro.component';
 import { ListaNumerosComponent } from './lista-numeros/lista-numeros.component';
 import { DetalleNumeroComponent } from './detalle-numero/detalle-numero.component';
 import { BotonAgregarComponent } from './boton-agregar/boton-agregar.component';
+import { GeneralaDadoComponent } from './generala-dado/generala-dado.component';
+import { GeneralaJuegoComponent } from './generala-juego/generala-juego.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { BotonAgregarComponent } from './boton-agregar/boton-agregar.component';
     AlertasLibroComponent,
     ListaNumerosComponent,
     DetalleNumeroComponent,
-    BotonAgregarComponent
+    BotonAgregarComponent,
+    GeneralaDadoComponent,
+    GeneralaJuegoComponent
   ],
   imports: [
     BrowserModule,

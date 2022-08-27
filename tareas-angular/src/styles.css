@@ -149,10 +149,14 @@ app-barra-nav h1 {
   justify-content: center;
 }
 
-.cuerpo button{
+.cuerpo .boton-numero{
   margin-top: 50px;
-  font-size: 20px;
   align-self: center;
+  /* text-align: center; */
+}
+
+.cuerpo .boton-texto{
+  font-size: 20px;
 }
 
 .tabla-numeros {
