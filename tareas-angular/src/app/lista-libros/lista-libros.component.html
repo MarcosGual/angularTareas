@@ -1,0 +1,12 @@
+<h2>Libros</h2>
+<div *ngFor="let libro of libros">
+  <h4>
+    <a [title]="'detalles de ' + libro.nombre">
+      {{ libro.nombre }}
+    </a>
+  </h4>
+  <p *ngIf="libro.descripcion">Descripcion: {{ libro.descripcion }}</p>
+  <button type="button" (click)="compartir()">
+    Compartir
+  </button>
+</div>
