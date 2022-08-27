@@ -1,0 +1,28 @@
+<div class="cuerpo">
+  
+  <table class="tabla-numeros">
+    <tbody>
+      <caption>
+        Lista de Números
+      </caption>
+      <tr>
+        <td></td>
+        <th>Random</th>
+      </tr>
+      <tr *ngFor="let numero of numerosAlAzar">
+        <th>Nro</th>
+        <td *ngIf="numero % 2 === 0; else elseTemplate">
+          <span>
+            <app-detalle-numero [numero]="numero" style="color: blueviolet">
+            </app-detalle-numero>
+          </span>
+        </td>
+        <ng-template #elseTemplate>
+          <td>
+            <app-detalle-numero [numero]="numero"> </app-detalle-numero>
+          </td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+</div>

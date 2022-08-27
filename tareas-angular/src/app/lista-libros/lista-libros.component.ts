@@ -12,7 +12,11 @@ export class ListaLibrosComponent implements OnInit {
   libros = libros;
 
   compartir(){
-    alert('El libro ha sido compartido. Gracias!')
+    window.alert('El libro ha sido compartido. Gracias!');
+  }
+
+  onNotificar(){
+    window.alert('Serás notificado cuando el producto salga a la venta...');
   }
 
   ngOnInit(): void {}
