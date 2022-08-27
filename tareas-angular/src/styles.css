@@ -143,6 +143,11 @@ app-barra-nav h1 {
   background-color: #eeeeee;
 }
 
+.tarea{
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .cuerpo{
   display: flex;
   flex-direction: column;
@@ -172,4 +177,16 @@ tr, td, caption {
   font-size: 25px;
   font-weight: 500;
   border: 2px solid black;
+}
+
+.dados{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.dados img{
+  height: 100px;
+  text-align: center;
+  margin: 10px;
 }

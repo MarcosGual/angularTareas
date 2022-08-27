@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-generala-dado',
   templateUrl: './generala-dado.component.html',
-  styleUrls: ['./generala-dado.component.css']
+  styleUrls: ['./generala-dado.component.css'],
 })
 export class GeneralaDadoComponent implements OnInit {
+  @Input() numero: number = 0;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
