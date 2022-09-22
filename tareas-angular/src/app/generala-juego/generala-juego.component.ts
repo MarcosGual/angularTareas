@@ -16,6 +16,12 @@ export class GeneralaJuegoComponent implements OnInit {
     this.azarIntervalo(1, 6)
   );
 
+  tirarDados(): void {
+    this.numerosAlAzar = Array.from({ length: 5 }, () =>
+      this.azarIntervalo(1, 6)
+    );
+  }
+
   verificarIgualdad(): boolean {
     let primero = this.numerosAlAzar[0];
     for (let i = 1; i < this.numerosAlAzar.length; i++) {
