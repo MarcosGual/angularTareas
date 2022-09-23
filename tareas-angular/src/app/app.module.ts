@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
@@ -17,7 +17,8 @@ import { PersonaAltaComponent } from './personas/persona-alta/persona-alta.compo
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-    ])
+    ]),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

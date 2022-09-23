@@ -1,3 +1,24 @@
-<h1>ANGULAR CRUD</h1>
-<app-persona-listado></app-persona-listado>
+<h1
+  style="
+    color: #6610f2;
+    font-weight: bolder;
+    font-size: 35px;
+    text-align: center;
+  "
+>
+  ANGULAR CRUD
+</h1>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <app-persona-alta *ngIf="formularioVisible" 
+      (onConfirmarPersona)="personaGuardada($event)"
+      (onCancelar)="mostrarFormulario(false)">
+      </app-persona-alta>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <app-persona-listado [personas]="listadoPersonas" (onNuevaPersona)="mostrarFormulario(true)"></app-persona-listado>
+    </div>
+  </div>
+</div>

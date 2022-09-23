@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Persona } from 'src/app/models/persona';
 
 @Component({
@@ -7,11 +7,18 @@ import { Persona } from 'src/app/models/persona';
   styleUrls: ['./persona-listado.component.css'],
 })
 export class PersonaListadoComponent implements OnInit {
-  personas: Persona[];
+  @Output() onNuevaPersona = new EventEmitter();
+  @Input() personas: Persona[];
   constructor() {}
 
   ngOnInit(): void {
-    this.personas = [];
-    this.personas.push(new Persona(1, 'Marcos', 'Gual', 35));
+  }
+
+  agregarPersona(){
+    this.onNuevaPersona.emit();
+  }
+
+  eliminarPersona(){
+    
   }
 }

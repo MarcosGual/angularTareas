@@ -1,1 +1,87 @@
-<p>persona-alta works!</p>
+<form class="row g-3 needs-validation mt-5" novalidate>
+  <div class="col-md-4 position-relative">
+    <label for="inputNombre" class="form-label">Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputNombre"
+      placeholder="Matías"
+      value=""
+      name="nombre"
+      [(ngModel)]="persona.nombre"
+      required
+    />
+    <div class="valid-tooltip">Parece correcto!</div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="inputApellido" class="form-label">Apellido</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputApellido"
+      placeholder="González"
+      value=""
+      name="apellido"
+      [(ngModel)]="persona.apellido"
+      required
+    />
+    <div class="valid-tooltip">Parece correcto!</div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="inputEdad" class="form-label">Edad</label>
+    <div class="input-group has-validation">
+      <input
+        type="number"
+        class="form-control"
+        id="inputEdad"
+        [(ngModel)]="persona.edad"
+        name="edad"
+        required
+      />
+      <div class="invalid-tooltip">Por favor indique una edad válida...</div>
+    </div>
+  </div>
+  <div class="col-md-6 position-relative">
+    <label for="inputCiudad" class="form-label">Ciudad</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputCiudad"
+      [(ngModel)]="persona.ciudad"
+      name="ciudad"
+      required
+    />
+    <div class="invalid-tooltip">Por favor procea una ciudad válida.</div>
+  </div>
+  <div class="col-md-6 position-relative">
+    <label for="selectProvincia" class="form-label">Provincia</label>
+    <select
+      class="form-select"
+      id="selectProvincia"
+      [(ngModel)]="persona.provincia"
+      name="provincia"
+      required
+    >
+      <option selected disabled value="">Elija...</option>
+      <option>Buenos Aires</option>
+      <option value="Córdoba">Córdoba</option>
+      <option value="Santa Fe">Santa Fe</option>
+      <option value="La Pampa">La Pampa</option>
+    </select>
+    <div class="invalid-tooltip">
+      Por favor seleccione una provincia válida...
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="d-flex justify-content-evenly">
+      <button class="btn btn-danger" type="submit" (click)="cancelar()">
+        Cancelar
+      </button>
+      <button class="btn btn-primary" type="submit" (click)="guardar()">
+        Enviar
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- <label>{{ persona | json }}</label> -->
