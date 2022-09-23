@@ -12,6 +12,7 @@
       <th scope="col">Edad</th>
       <th scope="col">Ciudad</th>
       <th scope="col">Provincia</th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +23,10 @@
       <td>{{ persona.edad }}</td>
       <td>{{ persona.ciudad }}</td>
       <td>{{ persona.provincia }}</td>
+      <td>
+        <button class="btn" (click)="editarPersona(persona)"><i class="bi bi-pencil-square" style="font-size: 25px;"></i></button>
+        <button class="btn" (click)="eliminarPersona(persona)"><i class="bi bi-x-circle" style="font-size: 25px;"></i></button>
+      </td>
     </tr>
   </tbody>
 </table>

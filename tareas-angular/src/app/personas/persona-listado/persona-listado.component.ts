@@ -11,14 +11,19 @@ export class PersonaListadoComponent implements OnInit {
   @Input() personas: Persona[];
   constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  agregarPersona(){
+  agregarPersona() {
     this.onNuevaPersona.emit();
   }
 
-  eliminarPersona(){
-    
+  eliminarPersona(persona: Persona) {
+    const index = this.personas.findIndex((x) => x === persona);
+    this.personas.splice(index, 1);
+  }
+
+  editarPersona(persona: Persona) {
+    const index = this.personas.findIndex((x) => x === persona);
+    // this.personas.splice
   }
 }

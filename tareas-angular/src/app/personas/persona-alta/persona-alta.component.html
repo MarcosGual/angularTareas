@@ -1,4 +1,4 @@
-<form class="row g-3 needs-validation mt-5" novalidate>
+<form #personaForm="ngForm" class="row g-3 needs-validation mt-5" novalidate>
   <div class="col-md-4 position-relative">
     <label for="inputNombre" class="form-label">Nombre</label>
     <input
@@ -6,12 +6,17 @@
       class="form-control"
       id="inputNombre"
       placeholder="Matías"
-      value=""
       name="nombre"
       [(ngModel)]="persona.nombre"
+      #nombre="ngModel"
       required
     />
-    <div class="valid-tooltip">Parece correcto!</div>
+    <div *ngIf="nombre.touched && nombre.valid" class="alert alert-success">
+      Parece correcto!
+    </div>
+    <div *ngIf="nombre.touched && nombre.invalid" class="alert alert-danger">
+      Nombre es requerido
+    </div>
   </div>
   <div class="col-md-4 position-relative">
     <label for="inputApellido" class="form-label">Apellido</label>
@@ -23,9 +28,18 @@
       value=""
       name="apellido"
       [(ngModel)]="persona.apellido"
+      #apellido="ngModel"
       required
     />
-    <div class="valid-tooltip">Parece correcto!</div>
+    <div *ngIf="apellido.touched && apellido.valid" class="alert alert-success">
+      Parece correcto!
+    </div>
+    <div
+      *ngIf="apellido.touched && apellido.invalid"
+      class="alert alert-danger"
+    >
+      Apellido es requerido
+    </div>
   </div>
   <div class="col-md-4 position-relative">
     <label for="inputEdad" class="form-label">Edad</label>
@@ -36,9 +50,15 @@
         id="inputEdad"
         [(ngModel)]="persona.edad"
         name="edad"
+        #edad="ngModel"
         required
       />
-      <div class="invalid-tooltip">Por favor indique una edad válida...</div>
+      <div *ngIf="edad.touched && edad.invalid" class="alert alert-danger">
+        Por favor indique una edad válida...
+      </div>
+    </div>
+    <div *ngIf="edad.touched && edad.valid" class="alert alert-success">
+      Parece correcto!
     </div>
   </div>
   <div class="col-md-6 position-relative">
@@ -49,9 +69,15 @@
       id="inputCiudad"
       [(ngModel)]="persona.ciudad"
       name="ciudad"
+      #ciudad="ngModel"
       required
     />
-    <div class="invalid-tooltip">Por favor procea una ciudad válida.</div>
+    <div *ngIf="ciudad.touched && ciudad.invalid" class="alert alert-danger">
+      Por favor provea una ciudad válida.
+    </div>
+    <div *ngIf="ciudad.touched && ciudad.valid" class="alert alert-success">
+      Te vamos a visitar!
+    </div>
   </div>
   <div class="col-md-6 position-relative">
     <label for="selectProvincia" class="form-label">Provincia</label>
@@ -74,10 +100,10 @@
   </div>
   <div class="col-12">
     <div class="d-flex justify-content-evenly">
-      <button class="btn btn-danger" type="submit" (click)="cancelar()">
+      <button class="btn btn-outline-danger" type="submit" (click)="cancelar()">
         Cancelar
       </button>
-      <button class="btn btn-primary" type="submit" (click)="guardar()">
+      <button class="btn btn-outline-primary" type="submit" (click)="guardar()">
         Enviar
       </button>
     </div>

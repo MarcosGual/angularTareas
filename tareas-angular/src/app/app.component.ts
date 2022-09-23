@@ -17,5 +17,6 @@ export class AppComponent {
 
   personaGuardada(persona: Persona) {
     this.listadoPersonas.push(persona);
+    this.formularioVisible = false;
   }
 }
