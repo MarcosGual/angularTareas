@@ -16,7 +16,7 @@ import { PersonaService } from 'src/app/services/persona.service';
   styleUrls: ['./persona-alta.component.css'],
 })
 export class PersonaAltaComponent implements OnInit {
-  @Output() onConfirmarPersona = new EventEmitter<Persona>();
+  @Output() onConfirmarPersona = new EventEmitter();
   @Output() onCancelar = new EventEmitter();
   persona: Persona;
   constructor(private personaService: PersonaService) {}
@@ -32,8 +32,15 @@ export class PersonaAltaComponent implements OnInit {
       alert('Formulario inválido!');
       return;
     } else{
-      this.personaService.agregar(this.persona);
-      this.onConfirmarPersona.emit(this.persona);
+      this.personaService.agregar(this.persona).subscribe({
+        next: ()=>{
+          this.onConfirmarPersona.emit();
+        },
+        error: ()=>{
+          throw new Error('Error al guardar persona...')
+        }
+      }) 
+      //this.onConfirmarPersona.emit();
     }
 
     // this.onConfirmarPersona.emit(this.persona);

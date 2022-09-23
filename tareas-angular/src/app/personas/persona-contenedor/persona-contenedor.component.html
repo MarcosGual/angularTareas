@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <app-persona-alta
+      *ngIf="formularioVisible"
+      (onConfirmarPersona)="agregarPersona()"
+      (onCancelar)="mostrarFormulario(false)"
+    >
+    </app-persona-alta>
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <app-persona-listado
+      [personas]="listadoPersonas"
+      (onNuevaPersona)="mostrarFormulario(true)"
+    ></app-persona-listado>
+  </div>
+</div>

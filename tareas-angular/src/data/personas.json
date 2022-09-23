@@ -1,0 +1,28 @@
+{
+  "personas": [
+    {
+      "nombre": "Marcos",
+      "apellido": "Gual",
+      "edad": 35,
+      "ciudad": "Córdoba",
+      "provincia": "Córdoba",
+      "id": 1
+    },
+    {
+      "nombre": "Antonella",
+      "apellido": "Abbattista",
+      "edad": 30,
+      "ciudad": "General Roca",
+      "provincia": "Río Negro",
+      "id": 2
+    },
+    {
+      "nombre": "Sofía",
+      "apellido": "Gual",
+      "edad": 31,
+      "ciudad": "Córdoba",
+      "provincia": "Córdoba",
+      "id": 3
+    }
+  ]
+}

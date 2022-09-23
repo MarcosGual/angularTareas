@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Persona } from './models/persona';
+import { PersonaService } from './services/persona.service';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +8,7 @@ import { Persona } from './models/persona';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  formularioVisible: boolean = false;
-  listadoPersonas: Persona[] = [];
+
   title = 'tareas-angular';
 
-  mostrarFormulario(visible: boolean) {
-    this.formularioVisible = visible;
-  }
-
-  personaGuardada(persona: Persona) {
-    this.listadoPersonas.push(persona);
-    this.formularioVisible = false;
-  }
 }
