@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Mi Aplicación</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            aria-current="page"
+            href="#"
+            [routerLink]="['primero', 1]"
+            >Primero</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            href="#"
+            routerLink="segundo"
+            >Segundo</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<p style="color: red">MI COMPONENTE APP</p>
+
+<p *ngIf="nombre">Mi nombre es: {{ nombre }}</p>
+<p>
+  <input type="text" [(ngModel)]="nombre" />
+</p>
+
+<ul *ngFor="let ciudad of lista">
+  <li
+    (click)="onCiudadClickeada(ciudad)"
+    [ngClass]="{ seleccionada: ciudad === seleccion }"
+  >
+    {{ ciudad }}
+  </li>
+</ul>
+
+<div *ngIf="seleccion">
+  <p>Tu ciudad es: {{ seleccion }}</p>
+  <!-- <button (click)="limpiar()">Limpiar Selección</button> -->
+  <app-button (click)="limpiar()" [color]="'blue'" [label]="'Limpiar tu selección'"></app-button>
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
