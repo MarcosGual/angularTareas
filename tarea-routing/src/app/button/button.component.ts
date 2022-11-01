@@ -15,6 +15,7 @@ import {
 export class ButtonComponent implements OnInit, OnChanges, OnDestroy {
   @Input() color!: string;
   @Input() label: string;
+  @Input() seleccion: string;
 
   constructor() {}
 

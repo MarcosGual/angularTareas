@@ -57,7 +57,7 @@
 <div *ngIf="seleccion">
   <p>Tu ciudad es: {{ seleccion }}</p>
   <!-- <button (click)="limpiar()">Limpiar Selección</button> -->
-  <app-button (click)="limpiar()" [color]="'blue'" [label]="'Limpiar tu selección'"></app-button>
+  <app-button (click)="limpiar()" [color]="'blue'" [label]="'Limpiar tu selección'" [seleccion]="seleccion"></app-button>
 </div>
 
 <div class="container">
