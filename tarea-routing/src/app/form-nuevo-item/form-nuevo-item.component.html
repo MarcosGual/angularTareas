@@ -1,0 +1,20 @@
+<form>
+  <div class="row align-item-center">
+    <div class="col-auto">
+      <label for="nuevoItem" class="col-form-label">Nueva {{label}}</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" id="nuevoItem" class="form-control" #nuevoItem />
+    </div>
+    <div class="col-auto">
+      <button
+        class="{{ className }}"
+        type="submit"
+        (click)="agregarItem(nuevoItem.value)"
+      >
+        Agregar {{label}}
+      </button>
+    </div>
+  </div>
+</form>
+<br />

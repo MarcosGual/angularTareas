@@ -10,6 +10,8 @@ import { HijoUnoComponent } from './hijo-uno/hijo-uno.component';
 import { HijoDosComponent } from './hijo-dos/hijo-dos.component';
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from './button/button.component';
+import { FormNuevoItemComponent } from './form-nuevo-item/form-nuevo-item.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ButtonComponent } from './button/button.component';
     NoEncontradoComponent,
     HijoUnoComponent,
     HijoDosComponent,
-    ButtonComponent
+    ButtonComponent,
+    FormNuevoItemComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
