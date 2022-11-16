@@ -1,0 +1,11 @@
+<div class="container">
+  <label for="nombre" class="form-label">Nombre: </label>
+  <input
+    id="nombre"
+    type="text"
+    class="form-control mb-2"
+    [formControl]="nombreControl"
+  />
+  <button class="btn btn-warning" (click)="cambiarValor()">Enviar</button>
+  <p>{{ nombreControl.value }}</p>
+</div>

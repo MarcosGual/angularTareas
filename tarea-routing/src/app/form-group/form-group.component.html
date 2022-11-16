@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Electrodoméstico</h2>
+  <form action="" [formGroup]="form">
+    <label for="nombre" class="form-label">Nombre: </label>
+    <input
+      id="nombreControl"
+      type="text"
+      class="form-control mb-2"
+      formControlName="nombreControl"
+    />
+    <label for="precio" class="form-label">Precio: </label>
+    <input
+      id="precioControl"
+      type="number"
+      class="form-control mb-2"
+      name="precioControl"
+      formControlName="precioControl"
+    />
+    <label for="categoria" class="form-label">Tipo: </label>
+    <select
+      name="categoriaControl"
+      id="categoriaControl"
+      class="form-select mb-3"
+      formControlName="categoriaControl"
+    >
+      <option selected value=null>Seleccione...</option>
+      <option *ngFor="let categoria of categorias" value={{categoria.idCategoria}}>{{categoria.nombre}}</option>
+    </select>
+    <button class="btn btn-warning" (click)="enviar()">Enviar</button>
+    <p>{{ form.valid }}</p>
+    <p>{{form.value.categoriaControl}}</p>
+  </form>
+</div>
